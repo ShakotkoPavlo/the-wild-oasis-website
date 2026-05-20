@@ -1,13 +1,16 @@
+import { auth } from "../_lib/auth";
+
 export const metadata = {
   title: "Account",
   description: "This is the account page of the application.",
 };
 
-export default function Page() {
+export default async function Page() {
+  const session = await auth();
+
   return (
-    <div>
-      <h1>Account Page</h1>
-      <p>This is the account page.</p>
-    </div>
+    <h2 className="font-semibold text-2xl text-accent-400 mb-7">
+      Welcome, {session?.user?.name}
+    </h2>
   );
 }

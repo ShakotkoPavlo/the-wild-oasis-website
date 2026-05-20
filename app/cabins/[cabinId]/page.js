@@ -3,6 +3,7 @@ import Spinner from "@/app/_components/Spinner";
 import { getCabin, getCabins } from "@/app/_lib/data-service";
 import { Suspense } from "react";
 import Cabin from "./../../_components/Cabin";
+import ReservationReminder from "@/app/_components/ReservationReminder";
 
 export async function generateMetadata({ params }) {
   const { cabinId } = await params;
@@ -35,6 +36,7 @@ export default async function Page({ params }) {
         </h2>
         <Suspense fallback={<Spinner />}>
           <Reservation cabin={cabin} />
+          <ReservationReminder />
         </Suspense>
       </div>
     </div>
