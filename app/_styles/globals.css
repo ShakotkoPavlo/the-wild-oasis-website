@@ -25,6 +25,115 @@
 }
 @import "tailwindcss";
 
+.rdp-root {
+  --rdp-accent-color: var(--color-accent-500);
+  --rdp-accent-background-color: var(--color-accent-500);
+  --rdp-background-color: transparent;
+  --rdp-today-color: var(--color-accent-500);
+  --rdp-range_middle-background-color: var(--color-accent-500);
+  --rdp-range_middle-color: var(--color-primary-900);
+  --rdp-selected-border: 2px solid var(--color-accent-500);
+  --rdp-day_button-border-radius: 0;
+  --rdp-day_button-width: 44px;
+  --rdp-day_button-height: 44px;
+  --rdp-day-height: 44px;
+  --rdp-day-width: 44px;
+  --rdp-weekday-text-transform: uppercase;
+  --rdp-weekday-opacity: 0.7;
+  --rdp-disabled-opacity: 0.25;
+  --rdp-font-family: inherit;
+  --rdp-nav_button-width: 36px;
+  --rdp-nav_button-height: 36px;
+  color: var(--color-primary-100);
+  background: transparent;
+}
+
+.rdp-root .rdp-months {
+  gap: 2.5rem;
+}
+
+.rdp-root .rdp-month_caption,
+.rdp-root .rdp-caption_label {
+  color: var(--color-primary-50);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+.rdp-root .rdp-weekday {
+  color: var(--color-primary-300);
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.rdp-root .rdp-day {
+  color: var(--color-primary-100);
+}
+
+.rdp-root .rdp-dropdown {
+  background-color: var(--color-primary-800);
+  color: var(--color-primary-50);
+  border: 1px solid var(--color-primary-700);
+  padding: 0.25rem 0.5rem;
+  font-weight: 600;
+}
+
+.rdp-root .rdp-dropdown option {
+  background-color: var(--color-primary-800);
+  color: var(--color-primary-50);
+}
+
+.rdp-root .rdp-chevron {
+  fill: var(--color-accent-500);
+}
+
+.rdp-root .rdp-button_previous,
+.rdp-root .rdp-button_next {
+  color: var(--color-accent-500);
+}
+
+.rdp-root .rdp-button_previous:hover:not([disabled]),
+.rdp-root .rdp-button_next:hover:not([disabled]) {
+  background-color: var(--color-primary-800);
+}
+
+.rdp-root .rdp-day_button {
+  border-radius: 0;
+  font-weight: 500;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.rdp-root .rdp-day_button:hover:not([disabled]):not(.rdp-selected) {
+  background-color: var(--color-primary-700);
+  color: var(--color-primary-50);
+}
+
+.rdp-root .rdp-today:not(.rdp-selected) .rdp-day_button {
+  color: var(--color-accent-500);
+  font-weight: 700;
+}
+
+.rdp-root .rdp-range_start .rdp-day_button,
+.rdp-root .rdp-range_end .rdp-day_button {
+  background-color: var(--color-accent-600);
+  color: var(--color-primary-900);
+  font-weight: 700;
+}
+
+.rdp-root .rdp-range_middle .rdp-day_button {
+  color: var(--color-primary-900);
+  font-weight: 600;
+}
+
+.rdp-root .rdp-disabled {
+  text-decoration: line-through;
+  color: var(--color-primary-500);
+}
+
+.rdp-root .rdp-outside {
+  color: var(--color-primary-600);
+}
+
 @layer components {
   .spinner {
     margin: 3.2rem auto 1.6rem;
