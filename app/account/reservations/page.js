@@ -14,9 +14,18 @@ export default async function Page() {
 
   return (
     <div>
-      <h2 className="font-semibold text-2xl text-accent-400 mb-7">
-        Your reservations
-      </h2>
+      <div className="flex items-center justify-between mb-7">
+        <h2 className="font-semibold text-2xl text-accent-400">
+          Your reservations
+        </h2>
+
+        <Link
+          href="/cabins"
+          className="bg-accent-500 px-5 py-3 text-primary-800 font-semibold hover:bg-accent-600 transition-all"
+        >
+          Book another cabin &rarr;
+        </Link>
+      </div>
 
       {bookings.length === 0 ? (
         <p className="text-lg">
